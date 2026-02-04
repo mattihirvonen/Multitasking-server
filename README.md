@@ -12,8 +12,27 @@ Test appllication uses following ZIP libraries which PlatformIO fetch "automagic
 Repository contain some extra tool files
 - _**Makefile**_  contain examples to
   - build using Arduino CLI (**all**, default)
-  - Arduino build  "project cache" delete to force clean rebuild (**fullclean**)
+  - Arduino build "project cache" delete to force clean rebuild (**fullclean**)
   - copy Arduino tool chain generated project's symbol table "map" file to project's main directory (**map**)
   - generate mixed source code/assembly language absolute listing of build result application (**objdump**)
   - generate symbol table map using own command line options (**nm**)
 - _**cppcheck.cppcheck**_  CppCheck project file to use external CppCheck tool to inspect project sources. Note: If include directories are properly configured in project file, then CppCheck analyse also library code/header files
+
+### Makefile
+Makefile contain now only Windows "Command Prompt" directory path examples. Linux users can modidy paths him/her self. Ideas can find from my **hdrcopy** project.
+
+### Force Clean Build with Arduino IDE/CLI
+Arduino build use "internal compile cache", which is difficult to clean for new freah build from scratch. There are two methods
+- IDE/CLI method
+  - switch build target board type
+  - execute new verify (do not care ebout possible errors)
+  - switch back to original target board
+  - execute new verify
+- "brutal" cache delete under the hood
+  - check sketch directory name (32 hex digit) from Arduino build
+  - modify Makefile USER and SKETCH definitions
+  - execute from command line **make fullclean**
+
+### CppCheck
+Arduino library header and source files for CppCheck analyse's include directories/files can collect using my companion project
+- https://github.com/mattihirvonen/hdrcopy 
