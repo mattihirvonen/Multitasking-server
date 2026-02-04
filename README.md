@@ -9,6 +9,13 @@ Test appllication uses following ZIP libraries which PlatformIO fetch "automagic
 - https://github.com/BojanJurca/Lightweight-Standard-Template-Library-STL-for-Arduino.git
 - https://github.com/BojanJurca/Multitasking-Http-Ftp-Telnet-Ntp-Smtp-Servers-and-clients-for-ESP32-Arduino-Library.git
 
+Project's application workhorse is from ZIP library examples copied (and renamd) file
+- src/A_minimal_FTP_server.cpp
+
+### PlatformIO
+PlatformIO users expected to be familiar to modify project's configuration file **platformio.ini**
+
+### Extra tools
 Repository contain some extra tool files
 - _**Makefile**_  contain examples to
   - build using Arduino CLI (**all**, default)
@@ -22,7 +29,8 @@ Repository contain some extra tool files
 Makefile contain now only Windows "Command Prompt" directory path examples. Linux users can modidy paths him/her self. Ideas can find from my **hdrcopy** project.
 
 ### Force Clean Build with Arduino IDE/CLI
-Arduino build use "internal compile cache", which is difficult to clean for new freah build from scratch. There are two methods
+Arduino build use "internal compile cache", which is difficult to clean for new fresh build from scratch.
+There are two methods
 - IDE/CLI method
   - switch build target board type
   - execute new verify (do not care ebout possible errors)
