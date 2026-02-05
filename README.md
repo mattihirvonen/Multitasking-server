@@ -1,5 +1,6 @@
 # Multifunctions-server Build Demo Using PlatformIO
-This test application can build using
+**_READ THIS DOCUMENT AT LEAST THREE TIMES BEFORE DOING ANYTHING ELSE_**
+This test repository/application can build WITHOUT ANY modifications using
 - PlatformIO
 - Arduino IDE
 - Arduino CLI
@@ -12,10 +13,15 @@ Test appllication uses following ZIP libraries which PlatformIO fetch "automagic
 Project's application workhorse is from ZIP library examples copied (and renamd) file
 - src/A_minimal_FTP_server.cpp
 
-### PlatformIO
+## DO NOT !!!
+- Change or modify project's top directory file **_Multitasking-server.ino_** to contain functions
+  - setup()
+  - loop()
+
+## PlatformIO
 PlatformIO users expected to be familiar to modify project's configuration file **platformio.ini**
 
-### Extra tools
+## Extra tools
 Repository contain some extra tool files
 - _**Makefile**_  contain examples to
   - build using Arduino CLI (**all**, default)
@@ -25,10 +31,10 @@ Repository contain some extra tool files
   - generate symbol table map using own command line options (**nm**)
 - _**cppcheck.cppcheck**_  CppCheck project file to use external CppCheck tool to inspect project sources. Note: If include directories are properly configured in project file, then CppCheck analyse also library code/header files
 
-### Makefile
+## Makefile
 Makefile contain now only Windows "Command Prompt" directory path examples. Linux users can modidy paths him/her self. Ideas can find from my **hdrcopy** project.
 
-### Force Clean Build with Arduino IDE/CLI
+## Force Clean Build with Arduino IDE/CLI
 Arduino build use "internal compile cache", which is difficult to clean for new fresh build from scratch.
 There are two methods
 - IDE/CLI method
@@ -41,6 +47,6 @@ There are two methods
   - modify Makefile USER and SKETCH definitions
   - execute from command line **make fullclean**
 
-### CppCheck
+## CppCheck
 Arduino library header and source files for CppCheck analyse's include directories/files can collect using my companion project
 - https://github.com/mattihirvonen/hdrcopy 
