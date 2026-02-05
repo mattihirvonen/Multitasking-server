@@ -1,5 +1,6 @@
 # Multifunctions-server Build Demo Using PlatformIO
 **_READ THIS DOCUMENT AT LEAST THREE TIMES BEFORE DOING ANYTHING ELSE_**
+
 This test repository/application can build WITHOUT ANY modifications using
 - PlatformIO
 - Arduino IDE
@@ -14,7 +15,7 @@ Project's application workhorse is from ZIP library examples copied (and renamd)
 - src/A_minimal_FTP_server.cpp
 
 ## DO NOT !!!
-- Change or modify project's top directory file **_Multitasking-server.ino_** to contain functions
+- Do not change or modify project's top directory file **_Multitasking-server.ino_** to contain functions
   - setup()
   - loop()
 
