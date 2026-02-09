@@ -1,7 +1,7 @@
 # Multifunctions-server Build Demo Using PlatformIO
 **_READ THIS DOCUMENT AT LEAST THREE TIMES BEFORE DOING ANYTHING ELSE_**
 
-This test repository/application can build WITHOUT ANY modifications using
+This test repository/application was build WITHOUT ANY modifications using
 - PlatformIO
 - Arduino IDE
 - Arduino CLI
@@ -13,6 +13,9 @@ Test appllication uses following ZIP libraries which PlatformIO fetch "automagic
 
 Project's application workhorse is from ZIP library examples copied (and renamd) file
 - src/A_minimal_FTP_server.cpp
+
+## STATUS:
+- 2026-02-09 (morning): Projects's Arduino and PlatformIO builds from scratch have gone broken after update ZIP libraries from Github 
 
 ## DO NOT !!!
 - Do not change or modify project's top directory file **_Multitasking-server.ino_** to contain functions
