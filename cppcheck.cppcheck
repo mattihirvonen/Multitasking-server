@@ -5,15 +5,21 @@
     <analyze-all-vs-configs>false</analyze-all-vs-configs>
     <check-headers>true</check-headers>
     <check-unused-templates>true</check-unused-templates>
-    <inline-suppression>true</inline-suppression>
+    <inline-suppression>false</inline-suppression>
     <max-ctu-depth>2</max-ctu-depth>
     <max-template-recursion>100</max-template-recursion>
     <includedir>
+<!--
         <dir name="C:/work/hdrcopy/libhdr-user/"/>
         <dir name="C:/work/hdrcopy/libhdr-arduino/"/>
+-->
+        <dir name="C:/work/hdrcopy/libhdr-win-arduino-user/"/>
+        <dir name="C:/work/hdrcopy/libhdr-win-arduino-std/"/>
+        <dir name="C:/work/hdrcopy/libhdr-win-arduino-core/"/>
     </includedir>
     <defines>
         <define name="CONFIG_IDF_TARGET_ESP32"/>
+        <define name="CPPCHECK_FAKE"/>
     </defines>
     <suppressions>
         <suppression fileName="*">unusedFunction</suppression>
