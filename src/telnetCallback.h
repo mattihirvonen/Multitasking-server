@@ -32,9 +32,9 @@ String telnetCommandHandlerCallback (int argc, char *argv [], telnetServer_t::te
                   return "\r";
                 delay (250); 
 
-                if (tcn->peekChar ()) {
+                if (tcn->peekChar ()) {  // break the loop?
                     tcn->recvChar ();
-                    return "\r"; // break the loop and return something different than "" to let the telnet server function know that the command has been processed
+                    break;
                 }
             }
             return "\r"; // return something different than "" to let the telnet server function know that the command has been processed
