@@ -1,39 +1,42 @@
-# Multifunctions-server Build Demo Using PlatformIO
+# Multifunctions-server Build Demo Using PIOARDUINO
 **_READ THIS DOCUMENT AT LEAST THREE TIMES BEFORE DOING ANYTHING ELSE_**
 
 This test repository/application was build WITHOUT ANY modifications using
-- PlatformIO
+- https://randomnerdtutorials.com/vs-code-pioarduino-ide-esp32/
+- PIOARDUINO (fork from PlatformIO)
 - Arduino IDE
 - Arduino CLI
 
-Test appllication uses following ZIP libraries which PlatformIO fetch "automagic" during build process into project from Github repositories
+Test appllication uses following ZIP libraries which PIOARDUINO fetch "automagic" during build process into project from Github repositories
 - https://github.com/BojanJurca/Thread-safe-ping-Arduino-library-for-ESP32.git
 - https://github.com/BojanJurca/Lightweight-Standard-Template-Library-STL-for-Arduino.git
 - https://github.com/BojanJurca/Multitasking-Http-Ftp-Telnet-Ntp-Smtp-Servers-and-clients-for-ESP32-Arduino-Library.git
 
-Project's application workhorse is from ZIP library examples copied (and renamd) file
-- src/A_minimal_FTP_server.cpp
+Project's application workhorse is from (ZIP) library examples modified file
+- src/servers.cpp
 
-## STATUS:
-- 2026-02-09 (morning): Projects's Arduino and PlatformIO builds from scratch have gone broken after update ZIP libraries from Github 
+## STATUS: (2026-05-25)
+- verified to build and run with PIOARDUINO (Windows build environment)
+- CppCheck is not updated for up to date libraries
+- Arduino IDE/CLI build is not re-verified after fix of PIOARDUINO (Windows build) compatibility
 
 ## DO NOT !!!
 - Do not change or modify project's top directory file **_Multitasking-server.ino_** to contain functions
   - setup()
   - loop()
 
-## PlatformIO
-PlatformIO users expected to be familiar to modify project's configuration file **platformio.ini**
+## PIOARDUINO (fork of PlatformIO)
+PIOARDUINO users expected to be familiar to modify project's configuration file **_platformio.ini_**
 
 ## Extra tools
 Repository contain some extra tool files
-- _**Makefile**_  contain examples to
+- **_Makefile_**  contain examples to
   - build using Arduino CLI (**all**, default)
   - Arduino build "project cache" delete to force clean rebuild (**fullclean**)
   - copy Arduino tool chain generated project's symbol table "map" file to project's main directory (**map**)
   - generate mixed source code/assembly language absolute listing of build result application (**objdump**)
   - generate symbol table map using own command line options (**nm**)
-- _**cppcheck.cppcheck**_  CppCheck project file to use external CppCheck tool to inspect project sources. Note: If include directories are properly configured in project file, then CppCheck analyse also library code/header files
+- **_cppcheck.cppcheck_**  CppCheck project file to use external CppCheck tool to inspect project sources. Note: If include directories are properly configured in project file, then CppCheck analyse also library code/header files
 
 ## Makefile
 Makefile contain now only Windows "Command Prompt" directory path examples. Linux users can modidy paths him/her self. Ideas can find from my **hdrcopy** project.
@@ -53,4 +56,13 @@ There are two methods
 
 ## CppCheck
 Arduino library header and source files for CppCheck analyse's include directories/files can collect using my companion project
-- https://github.com/mattihirvonen/hdrcopy 
+- https://github.com/mattihirvonen/hdrcopy
+
+## Library versions
+Dependency graph tested to build with **PIOARDUINO** in windows environment
+- ThreadSafePing @ 1.0.8+sha.8c322dd
+- LightweightSTL @ 1.0.13+sha.b8c6b73
+- ESP32_Multitasking_Network_Suite @ 1.0.3+sha.806c8df
+- ThreadSafeFS @ 1.0.1
+- LittleFS @ 3.3.5
+- WiFi @ 3.3.5

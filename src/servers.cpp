@@ -40,7 +40,7 @@ void setup ()
 
   // 4️⃣ Start WiFi connection to WiFi router
   #ifdef    WIFI_SECRETS
-  #include "wifi_secrets.h"
+  #include "wifiSecrets.h"
   WiFi.begin ( ROUTER_SSID,   ROUTER_PASSWORD );
   #else
   WiFi.begin ("ROUTER_SSID", "ROUTER_PASSWORD");
