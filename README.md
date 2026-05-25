@@ -60,7 +60,7 @@ There are two methods
 Arduino library header and source files for CppCheck analyse's include directories/files can collect using my companion project
 - https://github.com/mattihirvonen/hdrcopy
 
-## Library versions
+## Library Versions
 Dependency graph tested to build with **PIOARDUINO** in windows environment
 - ThreadSafePing @ 1.0.8+sha.8c322dd
 - LightweightSTL @ 1.0.13+sha.b8c6b73
@@ -68,3 +68,8 @@ Dependency graph tested to build with **PIOARDUINO** in windows environment
 - ThreadSafeFS @ 1.0.1
 - LittleFS @ 3.3.5
 - WiFi @ 3.3.5
+
+## Other Notes
+**platformio.ini** tricks
+- **_-Wno-missing-field-initializers_** required do disable build time warnings from "WiFi" library 
+- **_-Wno-misleading-indentation_** required do disable build time warnings from "telnetServer" library
