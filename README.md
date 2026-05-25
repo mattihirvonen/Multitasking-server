@@ -17,6 +17,8 @@ Project's application workhorse is from (ZIP) library examples modified file
 
 ## STATUS: (2026-05-25)
 - verified to build and run with PIOARDUINO (Windows build environment)
+- dualcore build select randomly which core run each task
+  (which make difficult to to implement tight real time controller task run the only task on dedicated core)
 - CppCheck is not updated for up to date libraries
 - Arduino IDE/CLI build is not re-verified after fix of PIOARDUINO (Windows build) compatibility
 
