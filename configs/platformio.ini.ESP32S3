@@ -7,6 +7,11 @@
 ;
 ; Please visit documentation for the other options and examples
 ; https://docs.platformio.org/page/projectconf.html
+;
+; https://docs.platformio.org/en/latest/boards/espressif32/esp32dev.html?utm_source=platformio&utm_medium=piohome
+
+;[platformio]
+;src_dir = .
 
 [env:esp32dev]
 platform = espressif32
@@ -49,7 +54,17 @@ monitor_speed = 115200
 ;monitor_port = /dev/ttyUSB15
 ;monitor_port = COM15
 
+; change microcontroller
+;board_build.mcu = esp32
+
+; change MCU frequency
+;board_build.f_cpu = 240000000L
+
+; board's default upload protocol is "esptool"
+;upload_protocol = esptoo
+
 lib_deps =
     https://github.com/BojanJurca/Thread-safe-ping-Arduino-library-for-ESP32.git
     https://github.com/BojanJurca/Lightweight-Standard-Template-Library-STL-for-Arduino.git
     https://github.com/BojanJurca/Multitasking-Http-Ftp-Telnet-Ntp-Smtp-Servers-and-clients-for-ESP32-Arduino-Library.git
+
